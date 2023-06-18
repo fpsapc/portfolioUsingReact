@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul li {
+  margin-right: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  padding: 2rem;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+.project {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+form label,
+form input,
+form textarea {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 1px;
+  background-color: #fff;
+  margin: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger .line2 {
+  opacity: 0;
+}
+
+.hamburger .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-links.show {
+    display: block;
+    background-color: #333;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+  }
+
+  .nav-links.show ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links.show ul li {
+    margin-bottom: 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem;
+  }
+
+  header {
+    padding: 0.5rem;
+  }
+
+  nav ul {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
   }
 }
